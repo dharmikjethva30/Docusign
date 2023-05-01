@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DocuSign OAuth Integration</title>
+</head>
+
+<body>
+    <h1>DocuSign OAuth Integration</h1>
+    <% if (error) { %>
+        <p style="color: red;">
+            <%= error %>
+        </p>
+        <% } %>
+            <% if (success) { %>
+                <p style="color: green;">
+                    <%= success %>
+                </p>
+                <% } %>
+                    <form action="/envelopes" method="POST">
+                        <label for="template-id">Template ID:</label>
+                        <input type="text" name="templateId" id="template-id">
+                        <br><br>
+                        <label for="recipient-name">Recipient Name:</label>
+                        <input type="text" name="recipientName" id="recipient-name">
+                        <br><br>
+                        <label for="recipient-email">Recipient Email:</label>
+                        <input type="email" name="recipientEmail" id="recipient-email">
+                        <br><br>
+                        <input type="submit" value="Send Envelope">
+                    </form>
+</body>
+
+</html>
